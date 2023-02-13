@@ -1,0 +1,174 @@
+.header {
+    font-family: 'Dosis', sans-serif;
+
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    /* background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg); */
+    /* background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://tourdanangcity.vn/wp-content/uploads/2020/02/pha-tam-giang-hue-1.jpg'); */
+    /* background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../imgs/header.jpg); */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://tourdanangcity.vn/wp-content/uploads/2020/02/pha-tam-giang-hue-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+  }
+  
+  .header .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .header__social-list {
+    list-style: none;
+    display: flex;
+    padding-left: 120px;
+  }
+  .header__social-item {
+    margin: 12px;
+    font-size: 20px;
+  }
+  .header__social-link {
+    text-decoration: none;
+    color: white;
+  }
+
+  .header__content {
+    /* background-color: #fcbec6; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 120px;
+  }
+
+  .header__content-hi {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .header__content-name {
+    font-size: 100px;
+  }
+
+  .header__content-desc {
+    font-size: 20px;
+  }
+  /* .header .header-social {
+    width: 100%;
+    display: flex;
+
+  }
+
+  .header .header-social .social-list {
+    list-style: none;
+    margin: 0;
+  } */
+  
+  /* .header .header-content {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 55%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    color: #fff;
+  } */
+  
+  /* .header  .header-content .header-subtitle {
+    font-weight: 500;
+    font-size: 50px;
+  } */
+  
+  /* .header .header-content .header-title {
+    font-weight: 600;
+    font-size: 120px;
+    line-height: .7;
+    margin-bottom: 25px;
+    color: inherit;
+  } */
+  
+  /* .header .header-content .header-mono {
+    letter-spacing: 5px;
+    font-weight: 500;
+    font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
+    margin-bottom: 40px;
+  } */
+
+  @media (max-width: 767.98px) {
+    .header {
+      height: 500px;
+      min-height: 500px;
+    }
+    .header__social-list {
+        padding-left: 0;
+        justify-content: center;
+    }
+    
+    .header__content {
+        padding-left: 70px;
+    }
+    .header__content-hi {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .header__content-name {
+        font-size: 80px;
+    }
+    .header__content-desc {
+        font-size: 18px;
+    }
+  }
+  
+  .header-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    opacity: .8;
+    color: #212529;
+  }
+  
+  .header-mini {
+    min-height: 24rem;
+    height: 24rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    background: #fcbec6;
+  }
+
+  
+/* .social-icons {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 180px;
+  }
+  
+  .social-icons .social-link {
+    font-size: 18px;
+  }
+  
+  .social-icons .social-link:hover {
+    color: #F85C70;
+  } */

@@ -1,0 +1,72 @@
+.sidebar {
+    display: block;
+    position: relative;
+    padding-left: 16px;
+    min-width: 275px;
+    min-height: calc(100vh - 75px);
+}
+
+.sidebar__about {
+    padding: 0 32px;
+}
+
+.sidebar__about-title {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 32px 0px 8px;
+}
+.sidebar__about-line {
+    width: 35px;
+    height: 2px;
+    background-color: lightcoral;
+    border-radius: 1px;
+}
+.sidebar__about-image-box {
+    display: flex;
+    justify-content: center;
+}
+.sidebar__about-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 25%;
+    border: 2px solid white;
+    justify-content: center;
+}
+.sidebar__about-username {
+    font-size: 18px;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.sidebar__about-description {
+    padding: 0;
+    padding-left: 20px;
+}
+
+.sidebar__about-infor-list {
+    list-style: none;
+    padding: 0;
+    padding-left: 20px;
+}
+.sidebar__about-infor-list-item {
+    padding: 8px 0;
+}
+.sidebar__about-infor-list-item > span {
+    font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar__about {
+        border-top: 1px solid #ccc;
+        padding-bottom: 32px;
+    }
+    .sidebar__about-image-box {
+        justify-content: left;
+        padding-top: 8px;
+        padding-left: 20px;
+    }
+    .sidebar__about-username {
+        text-align: left;
+        margin-left: 20px;
+    }
+  }

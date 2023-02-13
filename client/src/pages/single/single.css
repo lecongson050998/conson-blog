@@ -1,0 +1,111 @@
+
+
+.single {
+    font-family: 'Dosis', sans-serif;
+}
+.single__container {
+    display: flex;
+}
+@media (max-width: 991.98px) {
+    .single__container {
+        display: block;
+    }
+  }
+.single__content{
+    flex: 9;
+    /* padding: 32px; */
+    margin: 32px 60px;
+}
+.single__sidebar {
+    flex: 3;
+    border-left: 1px solid #ccc;
+}
+
+.single__card {
+    /* margin: 32px; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.single__card-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.single__card-title {
+    /* display: flex; */
+    /* display: block; */
+    padding: 16px 0 8px 0;
+    align-items: center;
+    position: relative;
+}
+.single__card-title-post {
+    /* position: absolute; */
+    font-size: 24px;
+    font-weight: 600;   
+    /* cursor: pointer; */
+    color: #444;
+    text-align: center;
+}
+.single__card-title-edit {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    color: teal;
+    cursor: pointer;
+}
+.single__card-title-delete {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    color: lightcoral;
+    cursor: pointer;
+}
+
+.single__card-auth {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.single__card-description {
+    font-weight: 500;
+    color: #444;
+    line-height: 32px;
+    /* line-height: 24px; */
+    /* padding-left: 30px; */
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; */
+}
+.single__card-description::first-letter {
+    font-size: 30px;
+    margin-left: 30px;
+    color: black;
+}
+.single__card-description-input {
+    font-size: 16px;
+    font-weight: 500;
+    min-height: 100px;
+    color: #444;
+    line-height: 32px;
+}
+.single__card-title-post-input {
+    /* position: absolute; */
+    font-size: 24px;
+    font-weight: 600;   
+    /* cursor: pointer; */
+    color: #444;
+    text-align: center;
+}

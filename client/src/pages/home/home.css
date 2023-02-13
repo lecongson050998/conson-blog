@@ -1,0 +1,72 @@
+.home {
+    min-height: 1500px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.home__about {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.home__about-card {
+    flex: 4;
+    color: #444;
+    border: none;
+    /* border: 1px solid #ccc; */
+    
+    padding: 50px;
+}
+.home__about-card-title {
+    /* margin-top: 50px; */
+    font-size: 30px;
+    font-weight: 600;
+}
+.home__about-card-line {
+    width: 36px;
+    height: 2px;
+    background-color: lightcoral;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+.home__about-card-infor-list {
+    list-style: none;
+    padding: 0;
+}
+.home__about-card-infor-list-item {
+    padding: 8px 0;
+}
+.home__about-card-infor-list-item > span {
+    font-weight: 600;
+}
+.home__about-card-social{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-left: -8px;
+}
+.home__about-card-social-item {
+    
+    padding: 8px;
+}
+.home__about-card-social-link {
+    color: lightcoral;
+    font-size: 18px;
+}
+
+.home__about-card > h5 {
+    padding: 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.home__about-card > p {
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+@media (max-width: 991.98px) {
+    .home__about {
+        display: block;
+    }
+  }
