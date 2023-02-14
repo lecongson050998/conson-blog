@@ -72,7 +72,7 @@ export default function Navbar({home}) {
                     </ul>
                     <ul className='navbar__list'>
                         <li className='navbar__list-item'>
-                            <Link to="/document" className="nav-link">Document</Link>
+                            <a href="/document" className="nav-link">Document</a>
                         </li>
                         <li className='navbar__list-item'>
                             <Link to='/project' className="nav-link">Project</Link>
@@ -100,7 +100,7 @@ export default function Navbar({home}) {
                     >
                         <ul className='navbar__list-mobile'>
                                 <li className='navbar__list-mobile-item'>
-                                    <a href="#portfolio" className="nav-link">Home</a>
+                                    <Link to={'/'} className="nav-link">Home</Link>
                                 </li>
                                 <li className='navbar__list-mobile-item'>
                                     <a href="#blog" className="nav-link">About</a>
@@ -109,13 +109,19 @@ export default function Navbar({home}) {
                                     <a href="#contact" className="nav-link">Resume</a>
                                 </li>
                                 <li className='navbar__list-mobile-item'>
-                                    <a href="#portfolio" className="nav-link">Document</a>
+                                    <Link to={'/document'} className="nav-link">Document</Link>
                                 </li>
                                 <li className='navbar__list-mobile-item'>
-                                    <a href="#blog" className="nav-link">Project</a>
+                                    <Link to={'/project'} className="nav-link">Project</Link>
                                 </li>
                                 <li className='navbar__list-mobile-item'>
-                                    <a href="#contact" className="nav-link">Contact</a>
+                                {
+                                user ? (
+                                    <Link className="nav-link" onClick={handleLogout}>Logout</Link>
+                                    ) : (
+                                        <Link to='/login' className="nav-link">Login</Link>
+                                        )
+                            }
                                 </li>
                         </ul>
                     </Collapsible>
