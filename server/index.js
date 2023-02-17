@@ -12,9 +12,17 @@ const path = require("path");
 
 
 dotenv.config();
+app.use(function(req, res, next){
+  res.setHeader('Access-Control-Allow-Origin','https://congson.online/');
+  res.setHeader('Access-Control-Allow-Methods','GET, POST, PATCH, DELETE, PUT');
+  res.setHeader('Access-Control-Request-Headers','X-Requested-With, content-type');
+  res.setHeader('Access-Control-Allow-Credentials',true);
+  next();
+})
 // app.use(cors());
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
+
 
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGO_URL, {
@@ -47,15 +55,10 @@ mongoose.connect(process.env.MONGO_URL, {
     res.status(200).json("File has been uploaded");
   });
 
-  var corsOptions = {
-    origin: '*',
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-    // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
 
-  app.use("/api/auth",cors(corsOptions), authRoute);
-  app.use("/api/users",cors(corsOptions), userRoute);
-  app.use("/api/document",cors(corsOptions), documentRoute);
+  app.use("/api/auth", authRoute);
+  app.use("/api/users", userRoute);
+  app.use("/api/document", documentRoute);
 
   app.listen("5000", () => {
     console.log('BACKEND running CORS-enabled web server.')
