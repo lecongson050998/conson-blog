@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+var cors = require('cors')
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
@@ -11,7 +12,7 @@ const path = require("path");
 
 
 dotenv.config();
-app.use(express.json());
+app.use(cors(),express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose.set('strictQuery', true);
@@ -35,11 +36,11 @@ mongoose.connect(process.env.MONGO_URL, {
 
   const upload = multer({ storage: storage });
 
-  app.all('/', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next()
-  });
+  // app.all('/', function(req, res, next) {
+  //   res.header("Access-Control-Allow-Origin", "*");
+  //   res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  //   next()
+  // });
 
   app.post("/api/upload", upload.single("file"), (req, res) => {
     res.status(200).json("File has been uploaded");
