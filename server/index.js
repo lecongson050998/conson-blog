@@ -12,13 +12,12 @@ const path = require("path");
 
 
 dotenv.config();
-app.use(function(req, res, next){
-  res.setHeader('Access-Control-Allow-Origin','https://congson.online/');
-  res.setHeader('Access-Control-Allow-Methods','GET, POST, PATCH, DELETE, PUT');
-  res.setHeader('Access-Control-Request-Headers','X-Requested-With, content-type');
-  res.setHeader('Access-Control-Allow-Credentials',true);
-  next();
-})
+var corsOptions = {
+  origin: "*"
+};
+
+app.use(cors(corsOptions));
+
 // app.use(cors());
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
