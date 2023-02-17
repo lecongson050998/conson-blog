@@ -3,7 +3,6 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 // const { MongoClient, ServerApiVersion } = require('mongodb');
-const MongoClient = require("mongodb");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const documentRoute = require("./routes/documents");
@@ -35,6 +34,12 @@ mongoose.connect(process.env.MONGO_URL, {
   });
 
   const upload = multer({ storage: storage });
+
+  app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next()
+  });
 
   app.post("/api/upload", upload.single("file"), (req, res) => {
     res.status(200).json("File has been uploaded");
