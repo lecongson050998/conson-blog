@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-var cors = require('cors')
+const cors = require('cors')
 // const { MongoClient, ServerApiVersion } = require('mongodb');
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
@@ -12,8 +12,8 @@ const path = require("path");
 
 
 dotenv.config();
-app.use(cors());
-// app.use(cors(),express.json());
+// app.use(cors());
+app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose.set('strictQuery', true);
@@ -47,9 +47,14 @@ mongoose.connect(process.env.MONGO_URL, {
     res.status(200).json("File has been uploaded");
   });
 
-  app.use("/api/auth", authRoute);
-  app.use("/api/users", userRoute);
-  app.use("/api/document", documentRoute);
+  var corsOptions = {
+    origin: 'http://congson.online',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
+  app.use("/api/auth",cors(corsOptions), authRoute);
+  app.use("/api/users",cors(corsOptions), userRoute);
+  app.use("/api/document",cors(corsOptions), documentRoute);
 
   app.listen("5000", () => {
     console.log('BACKEND running CORS-enabled web server.')
