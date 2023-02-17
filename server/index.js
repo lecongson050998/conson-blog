@@ -12,7 +12,8 @@ const path = require("path");
 
 
 dotenv.config();
-app.use(cors(),express.json());
+app.use(cors());
+// app.use(cors(),express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose.set('strictQuery', true);
@@ -51,5 +52,5 @@ mongoose.connect(process.env.MONGO_URL, {
   app.use("/api/document", documentRoute);
 
   app.listen("5000", () => {
-    console.log("Backend is running.");
+    console.log('BACKEND running CORS-enabled web server.')
   });
