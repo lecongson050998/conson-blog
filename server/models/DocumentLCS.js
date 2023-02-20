@@ -15,6 +15,10 @@ const DocumentLCSSchema = new mongoose.Schema(
         type: String,
         required: false,
       },
+      link: {
+        type: String,
+        required: false,
+      },
       username: {
         type: String,
         required: true,
